@@ -4,7 +4,6 @@ import com.edu.eci.ieti.dto.UserDto;
 import com.edu.eci.ieti.entities.User;
 import com.edu.eci.ieti.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +18,7 @@ public class UserController {
     private final UserService userService;
 
     @Autowired
-    public UserController(UserService userService){
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -27,41 +26,37 @@ public class UserController {
     public ResponseEntity<List<UserDto>> getAll() {
         List<UserDto> users = new ArrayList<>();
         List<User> userList = userService.getAll();
-        ModelMapper modelMapper = new ModelMapper();
         for (User user:userList) {
-            users.add(modelMapper.map(user, UserDto.class));
+            users.add(user.toDto());
         }
         return ResponseEntity.ok(users);
     }
 
     @GetMapping( "/{id}" )
     public ResponseEntity<UserDto> findById( @PathVariable String id ) {
-        ModelMapper modelMapper = new ModelMapper();
         User user = userService.findById(id);
         if (user == null){
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(modelMapper.map(user, UserDto.class));
+        return ResponseEntity.ok(user.toDto());
     }
 
     @PostMapping
     public ResponseEntity<UserDto> create( @RequestBody UserDto userDto ) {
-        ModelMapper modelMapper = new ModelMapper();
-        User user = userService.create(modelMapper.map(userDto,User.class));
+        User user = userService.create(userDto.toEntity());
         if (user == null) {
             return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.ok(modelMapper.map(user,UserDto.class));
+        return ResponseEntity.ok(user.toDto());
     }
 
     @PutMapping( "/{id}" )
     public ResponseEntity<UserDto> update( @RequestBody UserDto user, @PathVariable String id ) {
-        ModelMapper modelMapper = new ModelMapper();
-        User newUser = userService.update(modelMapper.map(user,User.class),id);
+        User newUser = userService.update(user.toEntity(),id);
         if (newUser == null){
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(newUser.toDto());
     }
 
     @DeleteMapping( "/{id}" )

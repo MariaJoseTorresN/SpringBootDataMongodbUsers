@@ -1,5 +1,7 @@
 package com.edu.eci.ieti.dto;
 
+import com.edu.eci.ieti.entities.User;
+
 import java.util.Date;
 
 public class UserDto {
@@ -45,8 +47,8 @@ public class UserDto {
         return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastName = lastname;
+    public void setLastname(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getCreatedAt() {
@@ -55,5 +57,11 @@ public class UserDto {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public UserDto(){}
+
+    public User toEntity(){
+        return new User(id, name, email, lastName, createdAt);
     }
 }
