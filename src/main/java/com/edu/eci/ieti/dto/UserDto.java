@@ -6,14 +6,14 @@ public class UserDto {
     private String id;
     private String name;
     private String email;
-    private String lastname;
-    private Date createdAt;
+    private String lastName;
+    private String createdAt;
 
-    public UserDto(String id, String name, String email, String lastname, Date createdAt) {
+    public UserDto(String id, String name, String email, String lastName, String createdAt) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.createdAt = createdAt;
     }
 
@@ -42,18 +42,18 @@ public class UserDto {
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastName = lastname;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 }
