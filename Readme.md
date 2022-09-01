@@ -26,18 +26,23 @@ If You want to see the part II click [here](https://github.com/MariaJoseTorresN/
 3. Test the endpoints in Insomnia:
 
    **Create:**
+
    ![Create1](/img/create1.jpeg)
    ![Create2](/img/create2.jpeg)
 
    **Get:**
+
    ![Get1](/img/get.jpeg)
    ![Get2](/img/get2.jpeg)
 
    **Get All:**
+
    ![Get All](/img/getAll.jpeg)
 
    **Update**
+
    ![Update](/img/update.jpeg)
 
    **Delete:**
+
    ![Delete](/img/delete.jpeg)
