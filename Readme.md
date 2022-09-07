@@ -1,4 +1,4 @@
-# Spring Boot Rest API Part I
+# Spring Boot Data Mongodb Users
 ## María José Torres Nieves
 
 In this repository you will find de development of Part I.
@@ -14,7 +14,7 @@ If You want to see the part II click [here](https://github.com/MariaJoseTorresN/
 
 1. Download the repository:
     ```
-    git clone https://github.com/MariaJoseTorresN/SpringBootRestAPIPartI.git
+    git clone https://github.com/MariaJoseTorresN/SpringBootDataMongodbUsers.git
     ```
 2. Compile and Run:
 

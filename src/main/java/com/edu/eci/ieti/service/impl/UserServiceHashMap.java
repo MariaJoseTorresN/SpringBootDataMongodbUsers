@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@Service
 public class UserServiceHashMap implements UserService {
     private HashMap<String,User> users = new HashMap<>();
 
@@ -36,10 +35,13 @@ public class UserServiceHashMap implements UserService {
     }
 
     @Override
-    public void deleteById(String id) {
+    public boolean deleteById(String id) {
+        boolean flag = false;
         if (users.containsKey(id)){
             users.remove(id);
+            flag = true;
         }
+        return flag;
     }
 
     @Override

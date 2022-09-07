@@ -2,6 +2,8 @@ package com.edu.eci.ieti.dto;
 
 import com.edu.eci.ieti.entities.User;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserDto {
@@ -62,6 +64,10 @@ public class UserDto {
     public UserDto(){}
 
     public User toEntity(){
-        return new User(id, name, email, lastName, createdAt);
+        try {
+            return new User(id, name, email, lastName, new SimpleDateFormat("dd/MM/yyyy").parse(createdAt));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
