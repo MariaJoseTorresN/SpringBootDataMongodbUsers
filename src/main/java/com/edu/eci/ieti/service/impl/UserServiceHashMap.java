@@ -5,6 +5,7 @@ import com.edu.eci.ieti.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -51,5 +52,15 @@ public class UserServiceHashMap implements UserService {
         }
         deleteById(userId);
         return create(user);
+    }
+
+    @Override
+    public List<User> findUsersWithNameOrLastNameLike(String queryText) {
+        return null;
+    }
+
+    @Override
+    public List<User> findUsersCreatedAfter(Date startDate) {
+        return null;
     }
 }

@@ -4,7 +4,6 @@ import com.edu.eci.ieti.entities.User;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class UserDto {
     private String id;

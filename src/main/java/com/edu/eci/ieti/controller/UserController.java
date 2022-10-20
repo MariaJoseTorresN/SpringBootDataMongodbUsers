@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,5 +67,19 @@ public class UserController {
         }
         userService.deleteById(id);
         return ResponseEntity.ok(true);
+    }
+
+    @GetMapping("/findName/{queryText}")
+    public ResponseEntity<List<UserDto>> findUsersWithNameOrLastNameLike(@PathVariable String queryText) {
+        List<UserDto> usersDto = new ArrayList<>();
+        userService.findUsersWithNameOrLastNameLike(queryText).forEach((user) -> usersDto.add(user.toDto()));
+        return ResponseEntity.ok(usersDto);
+    }
+
+    @GetMapping("/findAfter/{startDate}")
+    public ResponseEntity<List<UserDto>>findUsersCreatedAfter(@PathVariable String startDate) throws ParseException {
+        List<UserDto> usersDto = new ArrayList<>();
+        userService.findUsersCreatedAfter(new SimpleDateFormat("dd-MM-yyyy").parse(startDate)).forEach((user) -> usersDto.add(user.toDto()));
+        return ResponseEntity.ok(usersDto);
     }
 }

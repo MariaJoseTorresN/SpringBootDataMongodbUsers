@@ -27,22 +27,39 @@ If You want to see the part II click [here](https://github.com/MariaJoseTorresN/
 
    **Create:**
 
-   ![Create1](/img/create1.jpeg)
-   ![Create2](/img/create2.jpeg)
+   ![Create1](/img/create1.png)
+   ![Create2](/img/create2.png)
 
    **Get:**
 
-   ![Get1](/img/get.jpeg)
-   ![Get2](/img/get2.jpeg)
+   ![Get1](/img/get.png)
+   ![Get2](/img/get2.png)
 
    **Get All:**
 
-   ![Get All](/img/getAll.jpeg)
+   ![Get All](/img/getAll.png)
 
    **Update**
 
-   ![Update](/img/update.jpeg)
+   ![Update](/img/update.png)
 
    **Delete:**
 
-   ![Delete](/img/delete.jpeg)
+   ![Delete](/img/delete.png)
+   
+   **Get All after delete:**
+
+   ![AfterDelete](/img/afterDelete.png)
+4. Test Challenge
+
+   **New users for this tests:**
+
+   ![NewGetAll](/img/newGetAll.png)
+
+   **Find Name:**
+
+   ![FindName](/img/findName.png)
+
+   **After Date:**
+
+   ![AfterDate](/img/findAfter.png)
